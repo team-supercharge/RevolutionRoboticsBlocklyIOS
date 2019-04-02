@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.platform = :ios
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '11.0'
   s.name = "RevolutionRoboticsBlockly"
   s.summary = "RevolutionRoboticsBlockly lets users to build custom Blockly UI's for Revolution Robotics products."
   s.requires_arc = true
