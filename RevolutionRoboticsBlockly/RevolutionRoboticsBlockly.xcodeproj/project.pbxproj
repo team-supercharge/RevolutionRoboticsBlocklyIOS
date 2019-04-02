@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		090EADED2253849500CFE6DD /* RevolutionRoboticsBlockly.h in Headers */ = {isa = PBXBuildFile; fileRef = 090EADEB2253849500CFE6DD /* RevolutionRoboticsBlockly.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		090EADED2253849500CFE6DD /* RevolutionRoboticsBlockly.swift in Headers */ = {isa = PBXBuildFile; fileRef = 090EADEB2253849500CFE6DD /* RevolutionRoboticsBlockly.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		090EADF422538CE100CFE6DD /* RevolutionRoboticsBlockly.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090EADF322538CE100CFE6DD /* RevolutionRoboticsBlockly.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		090EADE82253849500CFE6DD /* RevolutionRoboticsBlockly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RevolutionRoboticsBlockly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		090EADEB2253849500CFE6DD /* RevolutionRoboticsBlockly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RevolutionRoboticsBlockly.h; sourceTree = "<group>"; };
+		090EADEB2253849500CFE6DD /* RevolutionRoboticsBlockly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevolutionRoboticsBlockly.swift; sourceTree = "<group>"; };
 		090EADEC2253849500CFE6DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		090EADF322538CE100CFE6DD /* RevolutionRoboticsBlockly.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RevolutionRoboticsBlockly.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +48,8 @@
 		090EADEA2253849500CFE6DD /* RevolutionRoboticsBlockly */ = {
 			isa = PBXGroup;
 			children = (
-				090EADEB2253849500CFE6DD /* RevolutionRoboticsBlockly.h */,
+				090EADEB2253849500CFE6DD /* RevolutionRoboticsBlockly.swift */,
+				090EADF322538CE100CFE6DD /* RevolutionRoboticsBlockly.xib */,
 				090EADEC2253849500CFE6DD /* Info.plist */,
 			);
 			path = RevolutionRoboticsBlockly;
@@ -59,7 +62,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				090EADED2253849500CFE6DD /* RevolutionRoboticsBlockly.h in Headers */,
+				090EADED2253849500CFE6DD /* RevolutionRoboticsBlockly.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +123,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				090EADF422538CE100CFE6DD /* RevolutionRoboticsBlockly.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
