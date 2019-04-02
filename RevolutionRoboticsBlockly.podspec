@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
 
   s.author = { "Mate Papp" => "mate.papp@supercharge.io" }
 
-  # # 5 - Replace this URL with your own GitHub page's URL (from the address bar)
-  # s.homepage = "https://gitlab.supercharge.io/revolutionrobotics/blockly-ios"
+  # 5 - Replace this URL with your own GitHub page's URL (from the address bar)
+  s.homepage = "https://gitlab.supercharge.io/revolutionrobotics/blockly-ios"
 
   s.source = { :git => "https://gitlab.supercharge.io/revolutionrobotics/blockly-ios",
                :tag => "#{s.version}" }
