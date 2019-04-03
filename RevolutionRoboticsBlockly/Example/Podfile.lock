@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RevolutionRoboticsBlockly: c308e7e61f74d50b5d717a6cbd9eba563ea827ea
+  RevolutionRoboticsBlockly: 2980323e22625bdbcd31bbb5942b2aed4ff77ef7
 
 PODFILE CHECKSUM: 0841fe670f11d88a372076cac7082a0cf9256081
 

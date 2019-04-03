@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A8E5C9AF7EB8FB21C7407AF5A4721AB /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328E8975D8F6C904637CE43CA0F153B /* ReplaceMe.swift */; };
+		09BA6C972254D41600D6553F /* Blockly in Resources */ = {isa = PBXBuildFile; fileRef = 09BA6C962254D41600D6553F /* Blockly */; };
+		09BA6C9A2254D4A600D6553F /* BlocklyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BA6C982254D4A600D6553F /* BlocklyViewController.xib */; };
+		09BA6C9B2254D4A600D6553F /* BlocklyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BA6C982254D4A600D6553F /* BlocklyViewController.xib */; };
+		09BA6C9C2254D4A600D6553F /* BlocklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA6C992254D4A600D6553F /* BlocklyViewController.swift */; };
+		09BA6C9D2254D4A600D6553F /* BlocklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA6C992254D4A600D6553F /* BlocklyViewController.swift */; };
 		0E5BDA2E71254608F7D29A2859FEE9D6 /* Pods-RevolutionRoboticsBlockly_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B16684D30B46BE9C85BA95B57BA995 /* Pods-RevolutionRoboticsBlockly_Example-dummy.m */; };
 		1755922F0E2BC0FFA8D970F4C936AC41 /* RevolutionRoboticsBlockly-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C31F856DDD03CCC7A12D645D9A0CBA3A /* RevolutionRoboticsBlockly-dummy.m */; };
 		428472BE8C43E9ABC248CCF42EFDF662 /* Pods-RevolutionRoboticsBlockly_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7130DBA7505A0ABECA3D80532D2C746 /* Pods-RevolutionRoboticsBlockly_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,15 +41,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09BA6C962254D41600D6553F /* Blockly */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Blockly; path = "../../../blockly-js/Blockly"; sourceTree = "<group>"; };
+		09BA6C982254D4A600D6553F /* BlocklyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BlocklyViewController.xib; path = RevolutionRoboticsBlockly/Classes/BlocklyViewController.xib; sourceTree = "<group>"; };
+		09BA6C992254D4A600D6553F /* BlocklyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlocklyViewController.swift; path = RevolutionRoboticsBlockly/Classes/BlocklyViewController.swift; sourceTree = "<group>"; };
 		11243E10D89A0CD5E34923576C55F4B1 /* RevolutionRoboticsBlockly.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RevolutionRoboticsBlockly.modulemap; sourceTree = "<group>"; };
-		2328E8975D8F6C904637CE43CA0F153B /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = RevolutionRoboticsBlockly/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		236FF5F751C4480531EBE632DD8CCFEB /* Pods-RevolutionRoboticsBlockly_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RevolutionRoboticsBlockly_Tests-Info.plist"; sourceTree = "<group>"; };
 		2AC8ABA357001DAB6D942970D0BE026C /* Pods-RevolutionRoboticsBlockly_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RevolutionRoboticsBlockly_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		379F02FC2791EA0186B2ACB36A4B6601 /* Pods-RevolutionRoboticsBlockly_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RevolutionRoboticsBlockly_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		3A2AE13FECB07850E6ABBBE03619C179 /* RevolutionRoboticsBlockly.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = RevolutionRoboticsBlockly.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3A2AE13FECB07850E6ABBBE03619C179 /* RevolutionRoboticsBlockly.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = RevolutionRoboticsBlockly.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		41F8547668F5D143F9D3898647599588 /* Pods-RevolutionRoboticsBlockly_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RevolutionRoboticsBlockly_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		423D74B99682F1C931DD875FF5522581 /* Pods_RevolutionRoboticsBlockly_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RevolutionRoboticsBlockly_Tests.framework; path = "Pods-RevolutionRoboticsBlockly_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		47F9176DA8A2A4EEF2F136F3CCE81898 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		423D74B99682F1C931DD875FF5522581 /* Pods_RevolutionRoboticsBlockly_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RevolutionRoboticsBlockly_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47F9176DA8A2A4EEF2F136F3CCE81898 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4D750228599AFDFB21C9018957182591 /* Pods-RevolutionRoboticsBlockly_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RevolutionRoboticsBlockly_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		638A95AB5BA5795924BBED82DA29E117 /* Pods-RevolutionRoboticsBlockly_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RevolutionRoboticsBlockly_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6C912DD8E98E9C6E0A0BC1BBA9B5834D /* Pods-RevolutionRoboticsBlockly_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RevolutionRoboticsBlockly_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -53,7 +59,7 @@
 		82B16684D30B46BE9C85BA95B57BA995 /* Pods-RevolutionRoboticsBlockly_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RevolutionRoboticsBlockly_Example-dummy.m"; sourceTree = "<group>"; };
 		90E58B745B59C28E871246BB6072420B /* Pods-RevolutionRoboticsBlockly_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RevolutionRoboticsBlockly_Example.modulemap"; sourceTree = "<group>"; };
 		9CB1678737436024BF18A19C4646B0C7 /* Pods-RevolutionRoboticsBlockly_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RevolutionRoboticsBlockly_Tests.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A9F28CB25C536C3B3F6961730161774C /* RevolutionRoboticsBlockly-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RevolutionRoboticsBlockly-prefix.pch"; sourceTree = "<group>"; };
 		C31F856DDD03CCC7A12D645D9A0CBA3A /* RevolutionRoboticsBlockly-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RevolutionRoboticsBlockly-dummy.m"; sourceTree = "<group>"; };
 		C7130DBA7505A0ABECA3D80532D2C746 /* Pods-RevolutionRoboticsBlockly_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RevolutionRoboticsBlockly_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -62,13 +68,13 @@
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CD57013E52F3907935B8188CE4F28AE5 /* Pods-RevolutionRoboticsBlockly_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RevolutionRoboticsBlockly_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D0C31F77CCF3B2B77D4C6314837167A7 /* Pods-RevolutionRoboticsBlockly_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RevolutionRoboticsBlockly_Tests-dummy.m"; sourceTree = "<group>"; };
-		DA0BCE11BE546F2CB0CD78E0FF12921A /* RevolutionRoboticsBlockly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RevolutionRoboticsBlockly.framework; path = RevolutionRoboticsBlockly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA0BCE11BE546F2CB0CD78E0FF12921A /* RevolutionRoboticsBlockly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RevolutionRoboticsBlockly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E152741FE70B3D594182A078FDCA0F8E /* RevolutionRoboticsBlockly-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RevolutionRoboticsBlockly-umbrella.h"; sourceTree = "<group>"; };
 		E162434BFA0A52CC3CAF9E32A8268EB9 /* RevolutionRoboticsBlockly.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RevolutionRoboticsBlockly.xcconfig; sourceTree = "<group>"; };
 		E3DDE5BCC38A69B167456185508546BF /* RevolutionRoboticsBlockly-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RevolutionRoboticsBlockly-Info.plist"; sourceTree = "<group>"; };
-		EA85D7702A0308E731E3F2BCB576C07C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		EA85D7702A0308E731E3F2BCB576C07C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F9569379E73468EDB48D4BDBB7C4B94E /* Pods-RevolutionRoboticsBlockly_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RevolutionRoboticsBlockly_Example-frameworks.sh"; sourceTree = "<group>"; };
-		FD3BA6294B8A65ED0CD26673D37E11CA /* Pods_RevolutionRoboticsBlockly_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RevolutionRoboticsBlockly_Example.framework; path = "Pods-RevolutionRoboticsBlockly_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD3BA6294B8A65ED0CD26673D37E11CA /* Pods_RevolutionRoboticsBlockly_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RevolutionRoboticsBlockly_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,7 @@
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
+				09BA6C962254D41600D6553F /* Blockly */,
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				5669448B43340EEEC50467D43F2F6612 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
@@ -161,7 +168,8 @@
 		D3EA3951A8BA57A05B6917E6CAEE3329 /* RevolutionRoboticsBlockly */ = {
 			isa = PBXGroup;
 			children = (
-				2328E8975D8F6C904637CE43CA0F153B /* ReplaceMe.swift */,
+				09BA6C992254D4A600D6553F /* BlocklyViewController.swift */,
+				09BA6C982254D4A600D6553F /* BlocklyViewController.xib */,
 				F7DE8C29E40718CBCCF7D921FCCB730F /* Pod */,
 				6DDEB0B44F5ADE6BDB37DEE6673E41DE /* Support Files */,
 			);
@@ -315,13 +323,22 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					72902F1791246294579E59382A74B01B = {
+						LastSwiftMigration = 1020;
+					};
+					E175ED9501D130D8B5CF4546B576831D = {
+						LastSwiftMigration = 1020;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 303928B50AD50ED2D57729436B95E32F /* Products */;
@@ -340,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BA6C9A2254D4A600D6553F /* BlocklyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +372,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BA6C972254D41600D6553F /* Blockly in Resources */,
+				09BA6C9B2254D4A600D6553F /* BlocklyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,8 +392,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A8E5C9AF7EB8FB21C7407AF5A4721AB /* ReplaceMe.swift in Sources */,
 				1755922F0E2BC0FFA8D970F4C936AC41 /* RevolutionRoboticsBlockly-dummy.m in Sources */,
+				09BA6C9D2254D4A600D6553F /* BlocklyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E5BDA2E71254608F7D29A2859FEE9D6 /* Pods-RevolutionRoboticsBlockly_Example-dummy.m in Sources */,
+				09BA6C9C2254D4A600D6553F /* BlocklyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +429,7 @@
 			baseConfigurationReference = CAA026AFE0ECE18FA533B4E8025D43D0 /* Pods-RevolutionRoboticsBlockly_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -430,11 +452,46 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		2EEC79C9146CC4B061A631ED85F5B6DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E162434BFA0A52CC3CAF9E32A8268EB9 /* RevolutionRoboticsBlockly.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RevolutionRoboticsBlockly/RevolutionRoboticsBlockly-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RevolutionRoboticsBlockly/RevolutionRoboticsBlockly-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RevolutionRoboticsBlockly/RevolutionRoboticsBlockly.modulemap";
+				PRODUCT_MODULE_NAME = RevolutionRoboticsBlockly;
+				PRODUCT_NAME = RevolutionRoboticsBlockly;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		593382BA8840658F75F73766AA1E1EE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -503,10 +560,11 @@
 			};
 			name = Release;
 		};
-		9C9A5A60FDF4609A8FEA68ED668C9BB1 /* Release */ = {
+		A71AC16EC2D6BC2976287F15AF70267C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E162434BFA0A52CC3CAF9E32A8268EB9 /* RevolutionRoboticsBlockly.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -519,7 +577,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/RevolutionRoboticsBlockly/RevolutionRoboticsBlockly-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/RevolutionRoboticsBlockly/RevolutionRoboticsBlockly-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/RevolutionRoboticsBlockly/RevolutionRoboticsBlockly.modulemap";
 				PRODUCT_MODULE_NAME = RevolutionRoboticsBlockly;
@@ -527,13 +585,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		AB4D69770D8ACE3A05E80BB3502666F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -586,7 +643,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -604,6 +661,7 @@
 			baseConfigurationReference = 6C912DD8E98E9C6E0A0BC1BBA9B5834D /* Pods-RevolutionRoboticsBlockly_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -626,43 +684,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		E7B30E37D50E1C8ADD9F9770F78E624B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E162434BFA0A52CC3CAF9E32A8268EB9 /* RevolutionRoboticsBlockly.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RevolutionRoboticsBlockly/RevolutionRoboticsBlockly-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RevolutionRoboticsBlockly/RevolutionRoboticsBlockly-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RevolutionRoboticsBlockly/RevolutionRoboticsBlockly.modulemap";
-				PRODUCT_MODULE_NAME = RevolutionRoboticsBlockly;
-				PRODUCT_NAME = RevolutionRoboticsBlockly;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		F232B5ECA11A71BFA199A229B323F454 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -712,13 +740,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -748,8 +775,8 @@
 		C90C74430A868F53C51CE8A39E615D1F /* Build configuration list for PBXNativeTarget "RevolutionRoboticsBlockly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E7B30E37D50E1C8ADD9F9770F78E624B /* Debug */,
-				9C9A5A60FDF4609A8FEA68ED668C9BB1 /* Release */,
+				A71AC16EC2D6BC2976287F15AF70267C /* Debug */,
+				2EEC79C9146CC4B061A631ED85F5B6DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

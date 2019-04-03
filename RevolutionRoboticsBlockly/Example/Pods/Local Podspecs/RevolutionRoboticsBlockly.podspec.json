@@ -3,20 +3,20 @@
   "version": "0.1.0",
   "summary": "A short description of RevolutionRoboticsBlockly.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Mate Papp/RevolutionRoboticsBlockly",
+  "homepage": "https://gitlab.supercharge.io/revolutionrobotics/blockly-ios",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Mate Papp": "matepapp@icloud.com"
+    "Mate Papp": "matepapp@supercharge.io"
   },
   "source": {
-    "git": "https://github.com/Mate Papp/RevolutionRoboticsBlockly.git",
+    "git": "https://gitlab.supercharge.io/revolutionrobotics/blockly-ios",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "11.0"
   },
   "source_files": "RevolutionRoboticsBlockly/Classes/**/*"
 }

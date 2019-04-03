@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RevolutionRoboticsBlockly
 
 class ViewController: UIViewController {
 
@@ -20,5 +21,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func blocklyButtonTapped(_ sender: Any) {
+        navigationController?.pushViewController(BlocklyViewController(), animated: true)
+    }
 }
 
