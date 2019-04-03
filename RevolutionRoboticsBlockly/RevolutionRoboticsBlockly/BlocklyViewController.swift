@@ -11,7 +11,7 @@ import WebKit
 
 /// A basic ViewController for a WebView.
 /// It handles the initial page load, and functions like window.prompt().
-class BlocklyViewController: UIViewController {
+public final class BlocklyViewController: UIViewController {
     // MARK: - Outlet
     @IBOutlet private weak var webView: WKWebView!
 
@@ -29,7 +29,7 @@ class BlocklyViewController: UIViewController {
         super.init(coder: aDecoder)
     }
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         webView.uiDelegate = self
         loadWebContent()
@@ -51,7 +51,7 @@ class BlocklyViewController: UIViewController {
 // MAKR: - WKUIDelegate
 extension BlocklyViewController: WKUIDelegate {
     // Handle window.alert() with a native dialog.
-    func webView(
+    public func webView(
         _ webView: WKWebView,
         runJavaScriptAlertPanelWithMessage message: String,
         initiatedByFrame frame: WKFrameInfo,
@@ -68,7 +68,7 @@ extension BlocklyViewController: WKUIDelegate {
     }
 
     // Handle window.confirm() with a native dialog.
-    func webView(
+    public func webView(
         _ webView: WKWebView,
         runJavaScriptConfirmPanelWithMessage message: String,
         initiatedByFrame frame: WKFrameInfo,
@@ -95,7 +95,7 @@ extension BlocklyViewController: WKUIDelegate {
     }
 
     // Handle window.prompt() with a native dialog.
-    func webView(
+    public func webView(
         _ webView: WKWebView,
         runJavaScriptTextInputPanelWithPrompt prompt: String,
         defaultText: String?,
