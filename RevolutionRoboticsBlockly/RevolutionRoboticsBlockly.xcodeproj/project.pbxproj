@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		09BA6C7F22549E4C00D6553F /* BlocklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA6C7D22549E4C00D6553F /* BlocklyViewController.swift */; };
 		09BA6C8022549E4C00D6553F /* BlocklyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BA6C7E22549E4C00D6553F /* BlocklyViewController.xib */; };
+		09BA6C882254A22000D6553F /* Blockly in Resources */ = {isa = PBXBuildFile; fileRef = 09BA6C872254A22000D6553F /* Blockly */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,7 @@
 		090EADEC2253849500CFE6DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09BA6C7D22549E4C00D6553F /* BlocklyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlocklyViewController.swift; sourceTree = "<group>"; };
 		09BA6C7E22549E4C00D6553F /* BlocklyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlocklyViewController.xib; sourceTree = "<group>"; };
+		09BA6C872254A22000D6553F /* Blockly */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Blockly; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		090EADEA2253849500CFE6DD /* RevolutionRoboticsBlockly */ = {
 			isa = PBXGroup;
 			children = (
+				09BA6C872254A22000D6553F /* Blockly */,
 				09BA6C7D22549E4C00D6553F /* BlocklyViewController.swift */,
 				09BA6C7E22549E4C00D6553F /* BlocklyViewController.xib */,
 				090EADEC2253849500CFE6DD /* Info.plist */,
@@ -73,6 +76,7 @@
 			buildConfigurationList = 090EADF02253849500CFE6DD /* Build configuration list for PBXNativeTarget "RevolutionRoboticsBlockly" */;
 			buildPhases = (
 				090EADE32253849500CFE6DD /* Headers */,
+				09BA6C852254A0DE00D6553F /* Copy Blockly */,
 				090EADE42253849500CFE6DD /* Sources */,
 				090EADE52253849500CFE6DD /* Frameworks */,
 				090EADE62253849500CFE6DD /* Resources */,
@@ -124,10 +128,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				09BA6C8022549E4C00D6553F /* BlocklyViewController.xib in Resources */,
+				09BA6C882254A22000D6553F /* Blockly in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09BA6C852254A0DE00D6553F /* Copy Blockly */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Blockly";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -R blockly-js/Blockly RevolutionRoboticsBlockly/\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		090EADE42253849500CFE6DD /* Sources */ = {

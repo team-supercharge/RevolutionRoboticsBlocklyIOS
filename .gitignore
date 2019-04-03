@@ -1,6 +1,9 @@
 ## OS X
 .DS_Store
 
+## Blockly JS
+/RevolutionRoboticsBlockly/**/Blockly
+
 ## Xcode
 build/
 *.pbxuser
