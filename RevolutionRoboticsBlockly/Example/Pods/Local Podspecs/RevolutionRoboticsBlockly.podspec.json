@@ -1,0 +1,22 @@
+{
+  "name": "RevolutionRoboticsBlockly",
+  "version": "0.1.0",
+  "summary": "A short description of RevolutionRoboticsBlockly.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Mate Papp/RevolutionRoboticsBlockly",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Mate Papp": "matepapp@icloud.com"
+  },
+  "source": {
+    "git": "https://github.com/Mate Papp/RevolutionRoboticsBlockly.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "RevolutionRoboticsBlockly/Classes/**/*"
+}

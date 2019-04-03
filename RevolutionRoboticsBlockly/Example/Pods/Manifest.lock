@@ -1,0 +1,16 @@
+PODS:
+  - RevolutionRoboticsBlockly (0.1.0)
+
+DEPENDENCIES:
+  - RevolutionRoboticsBlockly (from `../`)
+
+EXTERNAL SOURCES:
+  RevolutionRoboticsBlockly:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  RevolutionRoboticsBlockly: c308e7e61f74d50b5d717a6cbd9eba563ea827ea
+
+PODFILE CHECKSUM: 0841fe670f11d88a372076cac7082a0cf9256081
+
+COCOAPODS: 1.6.1
