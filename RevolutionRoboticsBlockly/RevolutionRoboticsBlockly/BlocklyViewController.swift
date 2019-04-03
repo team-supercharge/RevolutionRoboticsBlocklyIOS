@@ -21,7 +21,7 @@ public final class BlocklyViewController: UIViewController {
         static let hostHTML = "Blockly/webview.html"
     }
 
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
     }
 
