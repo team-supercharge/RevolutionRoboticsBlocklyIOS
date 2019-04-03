@@ -25,7 +25,7 @@
                                 <rect key="frame" x="162.5" y="318.5" width="50" height="30"/>
                                 <state key="normal" title="Blockly"/>
                                 <connections>
-                                    <action selector="blocklyButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="M2b-mt-1Om"/>
+                                    <action selector="blocklyButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dvH-rJ-y7r"/>
                                 </connections>
                             </button>
                         </subviews>

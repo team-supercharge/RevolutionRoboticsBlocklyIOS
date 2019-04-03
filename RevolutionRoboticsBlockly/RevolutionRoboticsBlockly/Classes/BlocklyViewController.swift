@@ -2,27 +2,24 @@
 //  BlocklyViewController.swift
 //  RevolutionRobotics
 //
-//  Created by Gabor Nagy Farkas on 2019. 03. 26..
+//  Created by Mate Papp on 2019. 04. 03..
 //  Copyright © 2019. Revolution Robotics. All rights reserved.
 //
 
 import UIKit
 import WebKit
 
-/// A basic ViewController for a WebView.
-/// It handles the initial page load, and functions like window.prompt().
-public class BlocklyViewController: UIViewController {
+public class BlocklyViewController: UIViewController, NibLoadable {
     // MARK: - Outlet
     @IBOutlet weak var webView: WKWebView!
 
     // MARK: - Constant
     private enum Constant {
-        /// The name used to reference this iOS object when executing callbacks from the JS code.
         static let hostHTML = "Blockly/webview.html"
     }
 
     public init() {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: type(of: self).nibName, bundle: Bundle(for: type(of: self)))
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -35,9 +32,9 @@ public class BlocklyViewController: UIViewController {
         loadWebContent()
     }
 
-    /// Load the root HTML page into the webview.
     private func loadWebContent() {
-        let url = Bundle.main.url(forResource: "webview", withExtension: "html", subdirectory: "Blockly")
+        let bundle = Bundle(for: type(of: self))
+        let url = bundle.url(forResource: "webview", withExtension: "html", subdirectory: "Blockly")
 
         guard let htmlURL = url else {
             print("Failed to load HTML. Could not find resource.")
@@ -50,7 +47,7 @@ public class BlocklyViewController: UIViewController {
 
 // MAKR: - WKUIDelegate
 extension BlocklyViewController: WKUIDelegate {
-    // Handle window.alert() with a native dialog.
+    // MARK: - window.alert()
     public func webView(
         _ webView: WKWebView,
         runJavaScriptAlertPanelWithMessage message: String,
@@ -67,7 +64,7 @@ extension BlocklyViewController: WKUIDelegate {
         completionHandler()
     }
 
-    // Handle window.confirm() with a native dialog.
+    // MARK: - window.confirm()
     public func webView(
         _ webView: WKWebView,
         runJavaScriptConfirmPanelWithMessage message: String,
@@ -75,7 +72,7 @@ extension BlocklyViewController: WKUIDelegate {
         completionHandler: @escaping (Bool) -> Void
     ) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let closeAndHandle: (Bool) -> Void = {
+        let closeAndHandle: Callback<Bool> = {
             alert.dismiss(animated: true, completion: nil)
             completionHandler($0)
         }
@@ -94,7 +91,7 @@ extension BlocklyViewController: WKUIDelegate {
         present(alert, animated: true)
     }
 
-    // Handle window.prompt() with a native dialog.
+    // MARK: - window.prompt()
     public func webView(
         _ webView: WKWebView,
         runJavaScriptTextInputPanelWithPrompt prompt: String,
