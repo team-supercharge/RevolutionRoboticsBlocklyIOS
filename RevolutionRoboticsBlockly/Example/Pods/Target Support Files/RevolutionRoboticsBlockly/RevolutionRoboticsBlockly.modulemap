@@ -1,6 +1,0 @@
-framework module RevolutionRoboticsBlockly {
-  umbrella header "RevolutionRoboticsBlockly-umbrella.h"
-
-  export *
-  module * { export * }
-}
