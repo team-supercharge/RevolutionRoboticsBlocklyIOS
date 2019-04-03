@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		090EADED2253849500CFE6DD /* RevolutionRoboticsBlockly.swift in Headers */ = {isa = PBXBuildFile; fileRef = 090EADEB2253849500CFE6DD /* RevolutionRoboticsBlockly.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		090EADF422538CE100CFE6DD /* RevolutionRoboticsBlockly.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090EADF322538CE100CFE6DD /* RevolutionRoboticsBlockly.xib */; };
+		09BA6C7F22549E4C00D6553F /* BlocklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA6C7D22549E4C00D6553F /* BlocklyViewController.swift */; };
+		09BA6C8022549E4C00D6553F /* BlocklyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BA6C7E22549E4C00D6553F /* BlocklyViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		090EADE82253849500CFE6DD /* RevolutionRoboticsBlockly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RevolutionRoboticsBlockly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		090EADEB2253849500CFE6DD /* RevolutionRoboticsBlockly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevolutionRoboticsBlockly.swift; sourceTree = "<group>"; };
 		090EADEC2253849500CFE6DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		090EADF322538CE100CFE6DD /* RevolutionRoboticsBlockly.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RevolutionRoboticsBlockly.xib; sourceTree = "<group>"; };
+		09BA6C7D22549E4C00D6553F /* BlocklyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlocklyViewController.swift; sourceTree = "<group>"; };
+		09BA6C7E22549E4C00D6553F /* BlocklyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlocklyViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +48,8 @@
 		090EADEA2253849500CFE6DD /* RevolutionRoboticsBlockly */ = {
 			isa = PBXGroup;
 			children = (
-				090EADEB2253849500CFE6DD /* RevolutionRoboticsBlockly.swift */,
-				090EADF322538CE100CFE6DD /* RevolutionRoboticsBlockly.xib */,
+				09BA6C7D22549E4C00D6553F /* BlocklyViewController.swift */,
+				09BA6C7E22549E4C00D6553F /* BlocklyViewController.xib */,
 				090EADEC2253849500CFE6DD /* Info.plist */,
 			);
 			path = RevolutionRoboticsBlockly;
@@ -62,7 +62,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				090EADED2253849500CFE6DD /* RevolutionRoboticsBlockly.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +97,7 @@
 				TargetAttributes = {
 					090EADE72253849500CFE6DD = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -123,7 +123,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				090EADF422538CE100CFE6DD /* RevolutionRoboticsBlockly.xib in Resources */,
+				09BA6C8022549E4C00D6553F /* BlocklyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BA6C7F22549E4C00D6553F /* BlocklyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +266,7 @@
 		090EADF12253849500CFE6DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -281,6 +283,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.revolutionrobotics.RevolutionRoboticsBlockly;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -289,6 +292,7 @@
 		090EADF22253849500CFE6DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
