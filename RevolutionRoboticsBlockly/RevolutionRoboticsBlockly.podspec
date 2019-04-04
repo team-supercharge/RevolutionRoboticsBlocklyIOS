@@ -24,14 +24,18 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://gitlab.supercharge.io/revolutionrobotics/blockly-ios'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Mate Papp' => 'matepapp@supercharge.io' }
-  s.source           = { :git => 'https://gitlab.supercharge.io/revolutionrobotics/blockly-ios', :tag => s.version.to_s }
+  s.author   = {
+        'Mate Papp' => 'mate.papp@supercharge.io',
+        'Gabor Nagy Farkas' => 'gabor.nagy.farkas@supercharge.io'
+    }
+  # Before release append the tag to the source ⚠️ ⚠️ ⚠️
+  s.source           = { :git => 'https://gitlab.supercharge.io/revolutionrobotics/blockly-ios' }#, :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'RevolutionRoboticsBlockly/Classes/**/*.{swift}'
-  s.resources = "RevolutionRoboticsBlockly/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  s.source_files = 'RevolutionRoboticsBlockly/RevolutionRoboticsBlockly/Classes/**/*.{swift}'
+  s.resources = "RevolutionRoboticsBlockly/RevolutionRoboticsBlockly/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 
   # s.resource_bundles = {
   #   'RevolutionRoboticsBlockly' => ['RevolutionRoboticsBlockly/Assets/*.png']
