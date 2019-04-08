@@ -1,5 +1,5 @@
 PODS:
-  - RevolutionRoboticsBlockly (0.1.0)
+  - RevolutionRoboticsBlockly (0.1.2)
 
 DEPENDENCIES:
   - RevolutionRoboticsBlockly (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RevolutionRoboticsBlockly: 2980323e22625bdbcd31bbb5942b2aed4ff77ef7
+  RevolutionRoboticsBlockly: f97619e33c3f0062e92fbb49a39b8cd7f7d32ed7
 
 PODFILE CHECKSUM: 0841fe670f11d88a372076cac7082a0cf9256081
 
