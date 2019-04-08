@@ -34,8 +34,8 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'RevolutionRoboticsBlockly/RevolutionRoboticsBlockly/Classes/**/*.{swift}'
-  s.resources = "RevolutionRoboticsBlockly/RevolutionRoboticsBlockly/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  s.source_files = 'RevolutionRoboticsBlockly/Classes/**/*.{swift}'
+  s.resources = "RevolutionRoboticsBlockly/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 
   # s.resource_bundles = {
   #   'RevolutionRoboticsBlockly' => ['RevolutionRoboticsBlockly/Assets/*.png']
