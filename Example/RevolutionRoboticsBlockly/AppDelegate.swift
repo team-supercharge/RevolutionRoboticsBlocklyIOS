@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  RevolutionRoboticsBlockly
 //
-//  Created by Mate Papp on 04/03/2019.
-//  Copyright (c) 2019 Mate Papp. All rights reserved.
+//  Created by Gabor Nagy Farkas on 04/10/2019.
+//  Copyright (c) 2019 Gabor Nagy Farkas. All rights reserved.
 //
 
 import UIKit

@@ -34,7 +34,7 @@ public class BlocklyViewController: UIViewController, NibLoadable {
 
     private func loadWebContent() {
         let bundle = Bundle(for: type(of: self))
-        let url = bundle.url(forResource: "webview", withExtension: "html", subdirectory: "Blockly")
+        let url = bundle.url(forResource: "webview", withExtension: "html")
 
         guard let htmlURL = url else {
             print("Failed to load HTML. Could not find resource.")
@@ -53,7 +53,7 @@ extension BlocklyViewController: WKUIDelegate {
         runJavaScriptAlertPanelWithMessage message: String,
         initiatedByFrame frame: WKFrameInfo,
         completionHandler: @escaping () -> Void
-    ) {
+        ) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let title = NSLocalizedString("OK", comment: "OK Button")
         let ok = UIAlertAction(title: title, style: .default) { _ in
@@ -70,7 +70,7 @@ extension BlocklyViewController: WKUIDelegate {
         runJavaScriptConfirmPanelWithMessage message: String,
         initiatedByFrame frame: WKFrameInfo,
         completionHandler: @escaping (Bool) -> Void
-    ) {
+        ) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let closeAndHandle: Callback<Bool> = {
             alert.dismiss(animated: true, completion: nil)
@@ -98,7 +98,7 @@ extension BlocklyViewController: WKUIDelegate {
         defaultText: String?,
         initiatedByFrame frame: WKFrameInfo,
         completionHandler: @escaping (String?) -> Void
-    ) {
+        ) {
         let alert = UIAlertController(title: prompt, message: nil, preferredStyle: .alert)
 
         alert.addTextField { (textField) in

@@ -31,17 +31,17 @@ TODO: Add long description of the pod here.
   # Before release append the tag to the source ⚠️ ⚠️ ⚠️
   s.source           = { :git => 'https://gitlab.supercharge.io/revolutionrobotics/blockly-ios' }#, :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.swift_version = '5.0'
   s.ios.deployment_target = '11.0'
 
   s.source_files = 'RevolutionRoboticsBlockly/Classes/**/*.{swift}'
-  s.resources = "RevolutionRoboticsBlockly/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  s.resources = ['RevolutionRoboticsBlockly/Assets/**/*.{png,jpeg,jpg,xcassets,mp3}', 'RevolutionRoboticsBlockly/Classes/**/*.{xib}', 'blockly-js/Blockly/**/*']
 
   # s.resource_bundles = {
   #   'RevolutionRoboticsBlockly' => ['RevolutionRoboticsBlockly/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit', 'WebKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
