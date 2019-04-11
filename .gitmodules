@@ -1,3 +1,4 @@
 [submodule "blockly-js"]
 	path = blockly-js
 	url = git@gitlab.supercharge.io:revolutionrobotics/blockly-js.git
+	ignore = dirty
