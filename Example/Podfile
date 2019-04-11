@@ -2,10 +2,4 @@ use_frameworks!
 
 target 'RevolutionRoboticsBlockly_Example' do
   pod 'RevolutionRoboticsBlockly', :path => '../'
-
-  target 'RevolutionRoboticsBlockly_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end
