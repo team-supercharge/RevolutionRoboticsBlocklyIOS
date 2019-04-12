@@ -1,15 +1,22 @@
 PODS:
-  - RevolutionRoboticsBlockly (0.1.2)
+  - RevolutionRoboticsBlockly (0.1.2):
+    - WKWebViewJavascriptBridge (~> 1.2.0)
+  - WKWebViewJavascriptBridge (1.2.0)
 
 DEPENDENCIES:
   - RevolutionRoboticsBlockly (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - WKWebViewJavascriptBridge
 
 EXTERNAL SOURCES:
   RevolutionRoboticsBlockly:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RevolutionRoboticsBlockly: 04b73d5a4b2ec1d37f292ad8dca6c0938ebde131
+  RevolutionRoboticsBlockly: d44590882291ff155337656deb4bd0574e506a82
+  WKWebViewJavascriptBridge: 43c5948c08c29b8777530d512d02eb921ca0881f
 
 PODFILE CHECKSUM: 0841fe670f11d88a372076cac7082a0cf9256081
 

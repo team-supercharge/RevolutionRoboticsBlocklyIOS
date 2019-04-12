@@ -13,11 +13,15 @@ public class BlocklyViewController: UIViewController, NibLoadable {
     // MARK: - Outlet
     @IBOutlet weak var webView: WKWebView!
 
+    // MARK: - Properties
+    private let audioHandlerBridge = AudioHandlerBridge()
+
     // MARK: - Constant
     private enum Constant {
         static let hostHTML = "Blockly/webview.html"
     }
 
+    // MARK: - Init
     public init() {
         super.init(nibName: type(of: self).nibName, bundle: Bundle(for: type(of: self)))
     }
@@ -30,8 +34,10 @@ public class BlocklyViewController: UIViewController, NibLoadable {
         super.viewDidLoad()
         webView.uiDelegate = self
         loadWebContent()
+        audioHandlerBridge.setupJavascriptBridge(in: webView)
     }
 
+    // MARK: - Setup
     private func loadWebContent() {
         let bundle = Bundle(for: type(of: self))
         let url = bundle.url(forResource: "webview", withExtension: "html")

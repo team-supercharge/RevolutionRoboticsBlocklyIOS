@@ -35,13 +35,17 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '11.0'
 
   s.source_files = 'RevolutionRoboticsBlockly/Classes/**/*.{swift}'
-  s.resources = ['RevolutionRoboticsBlockly/Assets/**/*.{png,jpeg,jpg,xcassets,mp3}', 'RevolutionRoboticsBlockly/Classes/**/*.{xib}', 'blockly-js/Blockly/**/*']
+  s.resources = [
+    'RevolutionRoboticsBlockly/Assets/**/*',
+    'RevolutionRoboticsBlockly/Classes/**/*.{xib}',
+    'blockly-js/Blockly/**/*'
+  ]
 
   # s.resource_bundles = {
   #   'RevolutionRoboticsBlockly' => ['RevolutionRoboticsBlockly/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit', 'WebKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit', 'AVFoundation', 'WebKit'
+  s.dependency 'WKWebViewJavascriptBridge', '~> 1.2.0'
 end
