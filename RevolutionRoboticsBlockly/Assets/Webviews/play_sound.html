@@ -1,0 +1,42 @@
+<html>
+
+<head>
+	<title>Robotics POC</title>
+</head>
+
+<body>
+	<h3>Play sound</h3>
+
+	<ul>
+		<li><a href="#" onclick="playSound('bell_1')">Bell #1</a></li>
+		<li><a href="#" onclick="playSound('bell_2')">Bell #2</a></li>
+		<li><a href="#" onclick="playSound('bell_3')">Bell #3</a></li>
+	</ul>
+</body>
+
+<script>
+	function createIOSJavascriptBridge(callback) {
+		if (window.WKWebViewJavascriptBridge) {
+			return callback(WKWebViewJavascriptBridge)
+		}
+		if (window.WKWVJBCallbacks) {
+			return window.WKWVJBCallbacks.push(callback)
+		}
+		window.WKWVJBCallbacks = [callback]
+		window.webkit.messageHandlers.iOS_Native_InjectJavascript.postMessage(null)
+	}
+
+	function playSound(file) {
+		createIOSJavascriptBridge(function (bridge) {
+			bridge.callHandler(
+				'Native.playSound', {
+					param: file
+				}
+			)
+		})
+
+		Native.playSound(file);
+	}
+</script>
+
+</html>
