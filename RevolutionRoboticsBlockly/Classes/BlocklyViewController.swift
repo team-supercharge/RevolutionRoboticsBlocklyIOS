@@ -15,6 +15,7 @@ public class BlocklyViewController: UIViewController, NibLoadable {
 
     // MARK: - Properties
     private let audioHandlerBridge = AudioHandlerBridge()
+    private let blocklyBridge = BlocklyBridge()
 
     // MARK: - Constant
     private enum Constant {
@@ -32,21 +33,38 @@ public class BlocklyViewController: UIViewController, NibLoadable {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        webView.uiDelegate = self
+        setupWebView()
         loadWebContent()
         audioHandlerBridge.setupJavascriptBridge(in: webView)
     }
 
-    // MARK: - Setup
+}
+
+// MARK: - Setup
+extension BlocklyViewController {
+    public func setup(blocklyBridgeDelegate: BlocklyBridgeDelegate?) {
+        blocklyBridge.delegate = blocklyBridgeDelegate
+    }
+
+    private func setupWebView() {
+        webView.isOpaque = false
+        webView.backgroundColor = .clear
+        webView.scrollView.backgroundColor = .clear
+        webView.scrollView.showsHorizontalScrollIndicator = false
+        webView.scrollView.showsVerticalScrollIndicator = false
+        webView.scrollView.bounces = false
+        webView.uiDelegate = self
+    }
+
     private func loadWebContent() {
         let bundle = Bundle(for: type(of: self))
         let url = bundle.url(forResource: "webview", withExtension: "html")
-
+        
         guard let htmlURL = url else {
             print("Failed to load HTML. Could not find resource.")
             return
         }
-
+        
         webView.load(URLRequest(url: htmlURL))
     }
 }
@@ -59,7 +77,7 @@ extension BlocklyViewController: WKUIDelegate {
         runJavaScriptAlertPanelWithMessage message: String,
         initiatedByFrame frame: WKFrameInfo,
         completionHandler: @escaping () -> Void
-        ) {
+    ) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let title = NSLocalizedString("OK", comment: "OK Button")
         let ok = UIAlertAction(title: title, style: .default) { _ in
@@ -76,9 +94,9 @@ extension BlocklyViewController: WKUIDelegate {
         runJavaScriptConfirmPanelWithMessage message: String,
         initiatedByFrame frame: WKFrameInfo,
         completionHandler: @escaping (Bool) -> Void
-        ) {
+    ) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let closeAndHandle: Callback<Bool> = {
+        let closeAndHandle: (Bool) -> Void = {
             alert.dismiss(animated: true, completion: nil)
             completionHandler($0)
         }
@@ -104,26 +122,8 @@ extension BlocklyViewController: WKUIDelegate {
         defaultText: String?,
         initiatedByFrame frame: WKFrameInfo,
         completionHandler: @escaping (String?) -> Void
-        ) {
-        let alert = UIAlertController(title: prompt, message: nil, preferredStyle: .alert)
-
-        alert.addTextField { (textField) in
-            textField.text = defaultText
-        }
-
-        let okTitle = NSLocalizedString("OK", comment: "OK button title")
-        let okAction = UIAlertAction(title: okTitle, style: .default) { (_) in
-            let textInput = alert.textFields![0] as UITextField
-            completionHandler(textInput.text)
-        }
-        alert.addAction(okAction)
-
-        let cancelTitle = NSLocalizedString("Cancel", comment: "Cancel button title")
-        let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { (_) in
-            completionHandler(nil)
-        }
-        alert.addAction(cancelAction)
-
-        present(alert, animated: true)
+    ) {
+        guard let defaultText = defaultText else { return }
+        blocklyBridge.handlePrompt(type: prompt, data: defaultText, callback: completionHandler)
     }
 }

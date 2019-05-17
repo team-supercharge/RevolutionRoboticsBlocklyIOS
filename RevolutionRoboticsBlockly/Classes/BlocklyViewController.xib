@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_1" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,23 +18,27 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Dro-BJ-jb8">
+                    <rect key="frame" x="429.5" y="188.5" width="37" height="37"/>
+                </activityIndicatorView>
                 <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Un5-gA-73V">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="44" y="0.0" width="808" height="393"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <wkWebViewConfiguration key="configuration">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                         <wkPreferences key="preferences"/>
                     </wkWebViewConfiguration>
                 </wkWebView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="Dro-BJ-jb8" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="0Pf-GC-c0J"/>
+                <constraint firstItem="Dro-BJ-jb8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5QL-Ri-bac"/>
                 <constraint firstItem="Un5-gA-73V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5tb-9d-sRA"/>
                 <constraint firstItem="Un5-gA-73V" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6Bx-ST-Csd"/>
-                <constraint firstItem="Un5-gA-73V" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="8h3-R9-0IE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Un5-gA-73V" secondAttribute="trailing" id="Ns2-qa-hNS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Un5-gA-73V" secondAttribute="bottom" id="lKL-vP-a1d"/>
             </constraints>
