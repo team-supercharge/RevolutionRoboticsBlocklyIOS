@@ -6,13 +6,13 @@
 //
 
 public protocol BlocklyBridgeDelegate: class {
-    func singleOptionSelector(_ optionSelector: SingleOptionSelector, callback: ((String) -> Void)?)
-    func multiOptionSelector(_ optionSelector: MultiOptionSelector, callback: ((String) -> Void)?)
-    func colorSelector(_ optionSelector: SingleOptionSelector, callback: ((String) -> Void)?)
-    func audioSelector(_ optionSelector: SingleOptionSelector, callback: ((String) -> Void)?)
-    func numberInput(_ inputHandler: InputHandler, callback: ((String) -> Void)?)
-    func textInput(_ inputHandler: InputHandler, callback: ((String) -> Void)?)
-    func blockContext(_ contextHandler: BlockContextHandler, callback: ((BlockContextAction) -> Void)?)
+    func singleOptionSelector(_ optionSelector: SingleOptionSelector, callback: ((String?) -> Void)?)
+    func multiOptionSelector(_ optionSelector: MultiOptionSelector, callback: ((String?) -> Void)?)
+    func colorSelector(_ optionSelector: SingleOptionSelector, callback: ((String?) -> Void)?)
+    func audioSelector(_ optionSelector: SingleOptionSelector, callback: ((String?) -> Void)?)
+    func numberInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?)
+    func textInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?)
+    func blockContext(_ contextHandler: BlockContextHandler, callback: ((BlockContextAction?) -> Void)?)
 }
 
 class BlocklyBridge {
@@ -75,7 +75,7 @@ class BlocklyBridge {
             }
 
             delegate?.blockContext(contextHandler) { action in
-                callback?(action.jsonSerialized)
+                callback?(action?.jsonSerialized)
             }
 
         default:
