@@ -20,6 +20,7 @@ public class BlocklyViewController: UIViewController, NibLoadable {
     // MARK: - Constant
     private enum Constant {
         static let hostHTML = "Blockly/webview.html"
+        static let iOSBlocklyUserAgent = "iOS-Blockly"
     }
 
     // MARK: - Init
@@ -53,6 +54,7 @@ extension BlocklyViewController {
         webView.scrollView.showsHorizontalScrollIndicator = false
         webView.scrollView.showsVerticalScrollIndicator = false
         webView.scrollView.bounces = false
+        webView.customUserAgent = Constant.iOSBlocklyUserAgent
         webView.uiDelegate = self
     }
 
