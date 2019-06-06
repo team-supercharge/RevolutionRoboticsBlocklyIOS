@@ -6,7 +6,8 @@
 //
 
 public struct SliderHandler: Decodable {
-    public var minimum: Double
-    public var maximum: Double
-    public var value: Double
+    public var title: String
+    public var defaultValue: String
+    public var minimum: Int
+    public var maximum: Int
 }

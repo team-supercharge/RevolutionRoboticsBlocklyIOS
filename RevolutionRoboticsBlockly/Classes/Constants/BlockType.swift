@@ -11,8 +11,12 @@ enum BlockType {
     static let colour = "colour_picker"
     static let logicBoolean = "logic_boolean"
     static let variable = "variable"
+    static let variableContext = "variables_get.var"
     static let blockContext = "block_context"
     static let selector = "selector"
     static let input = "input"
-    // TODO: Slider
+    static let slider = "slider"
+    static let singleLEDSelector = "block_set_led.led"
+    static let multiLEDSelector = "block_set_multiple_led.led_ids"
+    static let driveDirectionSelector = "block_drive.direction_selector"
 }
