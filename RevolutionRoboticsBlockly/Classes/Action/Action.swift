@@ -15,7 +15,7 @@ public protocol Action: Encodable {
     init(payload: String)
 }
 
-extension Action {
+public extension Action {
     var jsonSerialized: String? {
         let jsonEncoder = JSONEncoder()
         guard let encodedAction = try? jsonEncoder.encode(self),
