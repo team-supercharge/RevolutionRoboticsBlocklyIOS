@@ -5,6 +5,10 @@
 //  Created by Mate Papp on 2019. 05. 22..
 //
 
+import WebKit
+import WKWebViewJavascriptBridge
+
+// MARK: - BlocklyBridgeDelegate
 public protocol BlocklyBridgeDelegate: class {
     func optionSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
     func driveDirectionSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
@@ -17,11 +21,61 @@ public protocol BlocklyBridgeDelegate: class {
     func textInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?)
     func variableContext(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
     func blockContext(_ contextHandler: BlockContextHandler, callback: ((String?) -> Void)?)
+    func onVariablesExported(variables: String)
+    func onPythonProgramSaved(pythonCode: String)
+    func onXMLProgramSaved(xmlCode: String)
 }
 
+// MARK: - BlocklyBridge
 class BlocklyBridge {
+    // MARK: - Properties
+    private var bridge: WKWebViewJavascriptBridge?
     weak var delegate: BlocklyBridgeDelegate?
 
+    // MARK: - Setup
+    func connectBridge(with webView: WKWebView) {
+        bridge = WKWebViewJavascriptBridge(webView: webView)
+        registerHandlers()
+    }
+}
+
+// MARK: - iOS -> Javascript
+extension BlocklyBridge {
+    func loadProgram(xml: String) {
+        bridge?.call(handlerName: BridgeMethodSignature.loadXMLProgram, data: xml)
+    }
+
+    func saveProgram() {
+        bridge?.call(handlerName: BridgeMethodSignature.saveProgram)
+    }
+
+    func clearWorkspace() {
+        bridge?.call(handlerName: BridgeMethodSignature.clearWorkspace)
+    }
+}
+
+// MARK: - Javascript -> iOS
+extension BlocklyBridge {
+    private func registerHandlers() {
+        bridge?.register(handlerName: BridgeMethodSignature.onPythonProgramSaved) { [weak self] (parameters, _) in
+            guard let dict = parameters, let pythonCode = self?.decodeResponseParameter(dictionary: dict) else { return }
+            self?.delegate?.onPythonProgramSaved(pythonCode: pythonCode)
+        }
+
+        bridge?.register(handlerName: BridgeMethodSignature.onXMLProgramSaved) { [weak self] (parameters, _) in
+            guard let dict = parameters, let xmlCode = self?.decodeResponseParameter(dictionary: dict) else { return }
+            self?.delegate?.onXMLProgramSaved(xmlCode: xmlCode)
+        }
+
+        bridge?.register(handlerName: BridgeMethodSignature.onVariablesExported) { [weak self] (parameters, _) in
+            guard let dict = parameters, let variables = self?.decodeResponseParameter(dictionary: dict) else { return }
+            self?.delegate?.onVariablesExported(variables: variables)
+        }
+    }
+}
+
+// MARK: - Handling prompt
+extension BlocklyBridge {
     func handlePrompt(type: String, data: String, callback: ((String?) -> Void)?) {
         switch type {
         case let type where type.contains(BlockType.singleLEDSelector):
@@ -119,11 +173,18 @@ class BlocklyBridge {
             callback?(nil)
         }
     }
+}
 
+// MARK: - Helper
+extension BlocklyBridge {
     private func decodeJSONFromString<T: Decodable>(_ type: T.Type, string: String) -> T? {
         let decoder = JSONDecoder()
         guard let data = string.data(using: .utf8) else { return nil }
 
         return try? decoder.decode(T.self, from: data)
+    }
+
+    private func decodeResponseParameter(dictionary: [String: Any]) -> String? {
+        return dictionary["parameter"] as? String
     }
 }
