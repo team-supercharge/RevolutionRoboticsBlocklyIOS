@@ -14,7 +14,6 @@ public class BlocklyViewController: UIViewController, NibLoadable {
     @IBOutlet weak var webView: WKWebView!
 
     // MARK: - Properties
-    private let audioHandlerBridge = AudioHandlerBridge()
     private let blocklyBridge = BlocklyBridge()
 
     // MARK: - Constant
@@ -36,17 +35,11 @@ public class BlocklyViewController: UIViewController, NibLoadable {
         super.viewDidLoad()
         setupWebView()
         loadWebContent()
-        audioHandlerBridge.setupJavascriptBridge(in: webView)
     }
-
 }
 
 // MARK: - Setup
 extension BlocklyViewController {
-    public func setup(blocklyBridgeDelegate: BlocklyBridgeDelegate?) {
-        blocklyBridge.delegate = blocklyBridgeDelegate
-    }
-
     private func setupWebView() {
         webView.isOpaque = false
         webView.backgroundColor = .clear
@@ -71,7 +64,27 @@ extension BlocklyViewController {
     }
 }
 
-// MAKR: - WKUIDelegate
+// MARK: - Public
+public extension BlocklyViewController {
+    func setup(blocklyBridgeDelegate: BlocklyBridgeDelegate?) {
+        blocklyBridge.connectBridge(with: webView)
+        blocklyBridge.delegate = blocklyBridgeDelegate
+    }
+
+    func loadProgram(xml: String) {
+        blocklyBridge.loadProgram(xml: xml)
+    }
+
+    func saveProgram() {
+        blocklyBridge.saveProgram()
+    }
+
+    func clearWorkspace() {
+        blocklyBridge.clearWorkspace()
+    }
+}
+
+// MARK: - WKUIDelegate
 extension BlocklyViewController: WKUIDelegate {
     // MARK: - window.alert()
     public func webView(
