@@ -22,6 +22,66 @@ class ViewController: UIViewController {
     }
 
     @IBAction func blocklyButtonTapped(_ sender: Any) {
-        navigationController?.pushViewController(BlocklyViewController(), animated: true)
+        let blockly = BlocklyViewController()
+        blockly.setup(blocklyBridgeDelegate: self)
+        navigationController?.pushViewController(blockly, animated: true)
+    }
+}
+
+extension ViewController: BlocklyBridgeDelegate {
+    public func optionSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?) {
+        callback?(nil)
+    }
+
+    public func driveDirectionSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?) {
+        callback?(nil)
+    }
+
+    public func colorSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?) {
+        callback?(nil)
+    }
+
+    public func audioSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?) {
+        callback?(nil)
+    }
+
+    public func sliderHandler(_ sliderHandler: SliderHandler, callback: ((String?) -> Void)?) {
+        callback?(nil)
+    }
+
+    public func singleLEDInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?) {
+        callback?(nil)
+    }
+
+    public func multiLEDInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?) {
+        callback?(nil)
+    }
+
+    public func numberInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?) {
+        callback?(nil)
+    }
+
+    public func textInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?) {
+        callback?(nil)
+    }
+
+    public func variableContext(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?) {
+        callback?(nil)
+    }
+
+    public func blockContext(_ contextHandler: BlockContextHandler, callback: ((String?) -> Void)?) {
+        callback?(nil)
+    }
+
+    public func onVariablesExported(variables: String) {
+        print("Receiving variables = \(variables)")
+    }
+
+    public func onPythonProgramSaved(pythonCode: String) {
+        print("Receiving pythonCode = \(pythonCode)")
+    }
+
+    public func onXMLProgramSaved(xmlCode: String) {
+        print("Receiving xmlCode = \(xmlCode)")
     }
 }
