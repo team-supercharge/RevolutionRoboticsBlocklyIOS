@@ -35,6 +35,7 @@ public class BlocklyViewController: UIViewController, NibLoadable {
         super.viewDidLoad()
         setupWebView()
         loadWebContent()
+        setupBridge()
     }
 }
 
@@ -62,12 +63,15 @@ extension BlocklyViewController {
         
         webView.load(URLRequest(url: htmlURL))
     }
+
+    private func setupBridge() {
+        blocklyBridge.connectBridge(with: webView)
+    }
 }
 
 // MARK: - Public
 public extension BlocklyViewController {
     func setup(blocklyBridgeDelegate: BlocklyBridgeDelegate?) {
-        blocklyBridge.connectBridge(with: webView)
         blocklyBridge.delegate = blocklyBridgeDelegate
     }
 
