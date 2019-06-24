@@ -11,7 +11,7 @@ enum BlockType {
     static let colour = "colour_picker"
     static let logicBoolean = "logic_boolean"
     static let variable = "variable"
-    static let variableContext = "variables_get.var"
+    static let variableContext = ".var"
     static let blockContext = "block_context"
     static let selector = "selector"
     static let input = "input"

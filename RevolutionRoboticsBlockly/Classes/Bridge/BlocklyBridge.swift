@@ -10,6 +10,8 @@ import WKWebViewJavascriptBridge
 
 // MARK: - BlocklyBridgeDelegate
 public protocol BlocklyBridgeDelegate: class {
+    func alert(message: String, callback: (() -> Void)?)
+    func confirm(message: String, callback: ((Bool) -> Void)?)
     func optionSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
     func driveDirectionSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
     func colorSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
@@ -74,8 +76,16 @@ extension BlocklyBridge {
     }
 }
 
-// MARK: - Handling prompt
+// MARK: - Handling alert, confirm, prompt
 extension BlocklyBridge {
+    func handleAlert(message: String, callback: (() -> Void)?) {
+        delegate?.alert(message: message, callback: callback)
+    }
+
+    func handleConfirm(message: String, callback: ((Bool) -> Void)?) {
+        delegate?.confirm(message: message, callback: callback)
+    }
+
     func handlePrompt(type: String, data: String, callback: ((String?) -> Void)?) {
         switch type {
         case let type where type.contains(BlockType.singleLEDSelector):
@@ -148,7 +158,7 @@ extension BlocklyBridge {
 
             delegate?.variableContext(optionSelector, callback: callback)
 
-        case let type where type.contains(BlockType.variable):
+        case let type where type == BlockType.variable:
             guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
                 return
             }
