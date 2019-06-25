@@ -97,14 +97,7 @@ extension BlocklyViewController: WKUIDelegate {
         initiatedByFrame frame: WKFrameInfo,
         completionHandler: @escaping () -> Void
     ) {
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let title = NSLocalizedString("OK", comment: "OK Button")
-        let ok = UIAlertAction(title: title, style: .default) { _ in
-            alert.dismiss(animated: true, completion: nil)
-        }
-        alert.addAction(ok)
-        present(alert, animated: true)
-        completionHandler()
+        blocklyBridge.handleAlert(message: message, callback: completionHandler)
     }
 
     // MARK: - window.confirm()
@@ -114,24 +107,7 @@ extension BlocklyViewController: WKUIDelegate {
         initiatedByFrame frame: WKFrameInfo,
         completionHandler: @escaping (Bool) -> Void
     ) {
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let closeAndHandle: (Bool) -> Void = {
-            alert.dismiss(animated: true, completion: nil)
-            completionHandler($0)
-        }
-
-        let okTitle = NSLocalizedString("OK", comment: "OK button title")
-        let ok = UIAlertAction(title: okTitle, style: .default) { _ in
-            closeAndHandle(true)
-        }
-        alert.addAction(ok)
-
-        let cancelTitle = NSLocalizedString("Cancel", comment: "Cancel button title")
-        let cancel = UIAlertAction(title: cancelTitle, style: .default) { _ in
-            closeAndHandle(false)
-        }
-        alert.addAction(cancel)
-        present(alert, animated: true)
+        blocklyBridge.handleConfirm(message: message, callback: completionHandler)
     }
 
     // MARK: - window.prompt()

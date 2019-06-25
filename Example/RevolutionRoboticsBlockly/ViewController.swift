@@ -29,6 +29,14 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: BlocklyBridgeDelegate {
+    func alert(message: String, callback: (() -> Void)?) {
+        callback?()
+    }
+
+    func confirm(message: String, callback: ((Bool) -> Void)?) {
+        callback?(true)
+    }
+
     public func optionSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?) {
         callback?(nil)
     }
