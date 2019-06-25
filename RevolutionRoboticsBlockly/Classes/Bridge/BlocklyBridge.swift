@@ -23,6 +23,7 @@ public protocol BlocklyBridgeDelegate: class {
     func textInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?)
     func variableContext(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
     func blockContext(_ contextHandler: BlockContextHandler, callback: ((String?) -> Void)?)
+    func onBlocklyLoaded()
     func onVariablesExported(variables: String)
     func onPythonProgramSaved(pythonCode: String)
     func onXMLProgramSaved(xmlCode: String)
@@ -38,6 +39,13 @@ class BlocklyBridge {
     func connectBridge(with webView: WKWebView) {
         bridge = WKWebViewJavascriptBridge(webView: webView)
         registerHandlers()
+    }
+}
+
+// MARK: - Events
+extension BlocklyBridge {
+    func onWebViewLoaded() {
+        delegate?.onBlocklyLoaded()
     }
 }
 
