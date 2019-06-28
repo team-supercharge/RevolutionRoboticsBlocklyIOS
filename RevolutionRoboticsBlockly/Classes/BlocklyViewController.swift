@@ -50,6 +50,7 @@ extension BlocklyViewController {
         webView.scrollView.bounces = false
         webView.customUserAgent = Constant.iOSBlocklyUserAgent
         webView.uiDelegate = self
+        webView.navigationDelegate = self
     }
 
     private func loadWebContent() {
@@ -60,7 +61,7 @@ extension BlocklyViewController {
             print("Failed to load HTML. Could not find resource.")
             return
         }
-        
+
         webView.load(URLRequest(url: htmlURL))
     }
 
@@ -120,5 +121,11 @@ extension BlocklyViewController: WKUIDelegate {
     ) {
         guard let defaultText = defaultText else { return }
         blocklyBridge.handlePrompt(type: prompt, data: defaultText, callback: completionHandler)
+    }
+}
+
+extension BlocklyViewController: WKNavigationDelegate {
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        blocklyBridge.onWebViewLoaded()
     }
 }

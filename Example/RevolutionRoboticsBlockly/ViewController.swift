@@ -29,6 +29,10 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: BlocklyBridgeDelegate {
+    func onBlocklyLoaded() {
+        print("Blockly loaded")
+    }
+
     func alert(message: String, callback: (() -> Void)?) {
         callback?()
     }
