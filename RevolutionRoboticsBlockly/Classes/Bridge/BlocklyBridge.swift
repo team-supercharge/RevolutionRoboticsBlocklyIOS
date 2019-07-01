@@ -96,20 +96,6 @@ extension BlocklyBridge {
 
     func handlePrompt(type: String, data: String, callback: ((String?) -> Void)?) {
         switch type {
-        case let type where type.contains(BlockType.singleLEDSelector):
-            guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
-                return
-            }
-
-            delegate?.singleLEDInput(inputHandler, callback: callback)
-
-        case let type where type.contains(BlockType.multiLEDSelector):
-            guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
-                return
-            }
-
-            delegate?.multiLEDInput(inputHandler, callback: callback)
-
         case let type where type.contains(BlockType.slider):
             guard let sliderHandler = decodeJSONFromString(SliderHandler.self, string: data) else {
                 return
@@ -151,6 +137,20 @@ extension BlocklyBridge {
             }
 
             delegate?.optionSelector(optionSelector, callback: callback)
+
+        case let type where type.contains(BlockType.singleLEDSelector):
+            guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
+                return
+            }
+
+            delegate?.singleLEDInput(inputHandler, callback: callback)
+
+        case let type where type.contains(BlockType.multiLEDSelector):
+            guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
+                return
+            }
+
+            delegate?.multiLEDInput(inputHandler, callback: callback)
 
         case let type where type.contains(BlockType.input):
             guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
