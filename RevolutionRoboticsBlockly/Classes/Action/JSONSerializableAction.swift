@@ -5,17 +5,9 @@
 //  Created by Mate Papp on 2019. 06. 06..
 //
 
-public protocol ActionType: Encodable { }
+public protocol JSONSerializableAction: Encodable { }
 
-public protocol Action: Encodable {
-    associatedtype AT = ActionType
-    var type: AT { get }
-    var payload: String { get }
-
-    init(payload: String)
-}
-
-public extension Action {
+public extension JSONSerializableAction {
     var jsonSerialized: String? {
         let jsonEncoder = JSONEncoder()
         guard let encodedAction = try? jsonEncoder.encode(self),

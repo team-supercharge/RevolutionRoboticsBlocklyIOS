@@ -5,45 +5,40 @@
 //  Created by Mate Papp on 2019. 05. 20..
 //
 
-public enum BlockContextActionType: String, ActionType {
+public enum BlockContextActionType: String, Encodable {
     case addComment = "ADD_COMMENT"
     case deleteBlock = "DELETE_BLOCK"
     case help = "HELP"
     case duplicateBlock = "DUPLICATE_BLOCK"
 };
 
-public struct AddCommentAction: Action {
+public protocol BlockContextAction: JSONSerializableAction {
+    var type: BlockContextActionType { get }
+}
+
+public struct AddCommentAction: BlockContextAction {
     public var type: BlockContextActionType = .addComment
-    public var payload: String
+    public var payload: String?
 
-    public init(payload: String) {
+    public init(payload: String?) {
         self.payload = payload
     }
 }
 
-public struct DeleteBlockAction: Action {
+public struct DeleteBlockAction: BlockContextAction {
     public var type: BlockContextActionType = .deleteBlock
-    public var payload: String
 
-    public init(payload: String) {
-        self.payload = payload
-    }
+    public init() { }
 }
 
-public struct DuplicateBlockAction: Action {
+public struct DuplicateBlockAction: BlockContextAction {
     public var type: BlockContextActionType = .duplicateBlock
-    public var payload: String
 
-    public init(payload: String) {
-        self.payload = payload
-    }
+    public init() { }
 }
 
-public struct HelpAction: Action {
+public struct HelpAction: BlockContextAction {
     public var type: BlockContextActionType = .help
-    public var payload: String
 
-    public init(payload: String) {
-        self.payload = payload
-    }
+    public init() { }
 }

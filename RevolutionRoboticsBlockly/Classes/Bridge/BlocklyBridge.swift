@@ -21,8 +21,8 @@ public protocol BlocklyBridgeDelegate: class {
     func multiLEDInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?)
     func numberInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?)
     func textInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?)
-    func variableContext(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
-    func blockContext(_ contextHandler: BlockContextHandler, callback: ((String?) -> Void)?)
+    func variableContext(_ optionSelector: OptionSelector, callback: ((VariableContextAction?) -> Void)?)
+    func blockContext(_ contextHandler: BlockContextHandler, callback: ((BlockContextAction?) -> Void)?)
     func onBlocklyLoaded()
     func onVariablesExported(variables: String)
     func onPythonProgramSaved(pythonCode: String)
@@ -164,7 +164,9 @@ extension BlocklyBridge {
                 return
             }
 
-            delegate?.variableContext(optionSelector, callback: callback)
+            delegate?.variableContext(optionSelector) { action in
+                callback?(action?.jsonSerialized)
+            }
 
         case let type where type == BlockType.variable:
             guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
@@ -178,7 +180,9 @@ extension BlocklyBridge {
                 return
             }
 
-            delegate?.blockContext(contextHandler, callback: callback)
+            delegate?.blockContext(contextHandler) { action in
+                callback?(action?.jsonSerialized)
+            }
 
         case let type where type.contains(BlockType.math):
             guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
