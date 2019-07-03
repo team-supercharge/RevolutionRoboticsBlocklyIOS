@@ -5,12 +5,19 @@
 //  Created by Mate Papp on 2019. 06. 06..
 //
 
-public enum VariableContextActionType: String, ActionType {
+public enum VariableContextActionType: String, Encodable {
     case setVariable = "SET_VARIABLE_ID"
     case deleteVariable = "DELETE_VARIABLE_ID"
 }
 
-public struct SetVariableAction: Action {
+public protocol VariableContextAction: JSONSerializableAction {
+    var type: VariableContextActionType { get }
+    var payload: String { get }
+
+    init(payload: String)
+}
+
+public struct SetVariableAction: VariableContextAction {
     public var type: VariableContextActionType = .setVariable
     public var payload: String
 
@@ -19,7 +26,7 @@ public struct SetVariableAction: Action {
     }
 }
 
-public struct DeleteVariableAction: Action {
+public struct DeleteVariableAction: VariableContextAction {
     public var type: VariableContextActionType = .deleteVariable
     public var payload: String
 

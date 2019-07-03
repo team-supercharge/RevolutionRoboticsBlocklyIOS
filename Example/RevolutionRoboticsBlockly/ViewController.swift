@@ -77,11 +77,11 @@ extension ViewController: BlocklyBridgeDelegate {
         callback?(nil)
     }
 
-    public func variableContext(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?) {
+    public func variableContext(_ optionSelector: OptionSelector, callback: ((VariableContextAction?) -> Void)?) {
         callback?(nil)
     }
 
-    public func blockContext(_ contextHandler: BlockContextHandler, callback: ((String?) -> Void)?) {
+    public func blockContext(_ contextHandler: BlockContextHandler, callback: ((BlockContextAction?) -> Void)?) {
         callback?(nil)
     }
 
