@@ -152,7 +152,7 @@ extension BlocklyBridge {
 
             delegate?.multiLEDInput(inputHandler, callback: callback)
 
-        case let type where type.contains(BlockType.input):
+        case let type where type.contains(BlockType.input) || type.contains(BlockType.procedures):
             guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
                 return
             }

@@ -16,6 +16,7 @@ enum BlockType {
     static let selector = "selector"
     static let input = "input"
     static let slider = "slider"
+    static let procedures = "procedures"
     static let singleLEDSelector = "block_set_led.led"
     static let multiLEDSelector = "block_set_multiple_led.led_ids"
     static let driveDirectionSelector = "block_drive.direction_selector"
