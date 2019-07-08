@@ -18,7 +18,7 @@ public class BlocklyViewController: UIViewController, NibLoadable {
 
     // MARK: - Constant
     private enum Constant {
-        static let hostHTML = "Blockly/webview.html"
+        static let webview: (resource: String, extension: String) = (resource: "webview", extension: "html")
         static let iOSBlocklyUserAgent = "iOS-Blockly"
     }
 
@@ -31,6 +31,7 @@ public class BlocklyViewController: UIViewController, NibLoadable {
         super.init(coder: aDecoder)
     }
 
+    // MARK: - Lifecycle
     override public func viewDidLoad() {
         super.viewDidLoad()
         setupWebView()
@@ -55,14 +56,12 @@ extension BlocklyViewController {
 
     private func loadWebContent() {
         let bundle = Bundle(for: type(of: self))
-        let url = bundle.url(forResource: "webview", withExtension: "html")
-        
-        guard let htmlURL = url else {
+        guard let url = bundle.url(forResource: Constant.webview.resource, withExtension: Constant.webview.extension) else {
             print("Failed to load HTML. Could not find resource.")
             return
         }
 
-        webView.load(URLRequest(url: htmlURL))
+        webView.load(URLRequest(url: url))
     }
 
     private func setupBridge() {
