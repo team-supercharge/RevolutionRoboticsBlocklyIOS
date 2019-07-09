@@ -126,7 +126,7 @@ extension ViewController: BlocklyBridgeDelegate {
             }
 
             self?.presentConfirmAlert(
-                title: "Would you like to set or deletevrbnhjmk,y-=65431234568987   ~0e the variable?",
+                title: "Would you like to set or delete the variable?",
                 leftButtonTitle: "Set",
                 rightButtonTitle: "Delete",
                 callback: actionSelected
