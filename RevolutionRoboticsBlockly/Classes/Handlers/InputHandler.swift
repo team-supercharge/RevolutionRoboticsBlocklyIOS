@@ -7,5 +7,6 @@
 
 public struct InputHandler: Decodable {
     public var title: String
+    public var subtitle: String?
     public var defaultInput: String
 }
