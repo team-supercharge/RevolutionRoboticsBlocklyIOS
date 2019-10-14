@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'RevolutionRoboticsBlockly'
   s.version          = '0.1.2'
-  s.summary          = 'A short description of RevolutionRoboticsBlockly.'
+  s.summary          = 'Revolution Robotics Blockly is built on Google’s open-source Blockly library.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,19 +17,16 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://gitlab.supercharge.io/revolutionrobotics/blockly-ios'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.description      = 'Revolution Robotics Blockly is built on Google’s, which represents coding concepts as interlocking blocks, and transforms these blocks into syntactically correct source code.'
+  s.homepage         = 'https://github.com/RevolutionRobotics/RevolutionRoboticsBlocklyIOS.git'
+  # s.screenshots    = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.license          = { :type => 'GPLv3', :file => 'LICENSE' }
   s.author   = {
         'Mate Papp' => 'mate.papp@supercharge.io',
         'Gabor Nagy Farkas' => 'gabor.nagy.farkas@supercharge.io'
     }
   # Before release append the tag to the source ⚠️ ⚠️ ⚠️
-  s.source           = { :git => 'https://gitlab.supercharge.io/revolutionrobotics/blockly-ios' }#, :tag => s.version.to_s }
+  s.source = { :git => 'https://github.com/RevolutionRobotics/RevolutionRoboticsBlocklyDistribution.git', :tag => s.version }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.swift_version = '5.0'
   s.ios.deployment_target = '11.0'
