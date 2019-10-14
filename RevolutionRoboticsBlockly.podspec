@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RevolutionRoboticsBlockly'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'Revolution Robotics Blockly is built on Google’s open-source Blockly library.'
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
         'Gabor Nagy Farkas' => 'gabor.nagy.farkas@supercharge.io'
     }
   # Before release append the tag to the source ⚠️ ⚠️ ⚠️
-  s.source = { :git => 'https://github.com/RevolutionRobotics/RevolutionRoboticsBlocklyDistribution.git', :tag => s.version }
+  s.source = { :git => 'https://github.com/RevolutionRobotics/RevolutionRoboticsBlocklyIOS.git', :tag => s.version }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.swift_version = '5.0'
   s.ios.deployment_target = '11.0'
