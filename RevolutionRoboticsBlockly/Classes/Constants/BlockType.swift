@@ -20,4 +20,7 @@ enum BlockType {
     static let singleLEDSelector = "block_set_led.led"
     static let multiLEDSelector = "block_set_multiple_led.led_ids"
     static let driveDirectionSelector = "block_drive.direction_selector"
+    static let motorSelector = "motor.name_input"
+    static let bumperSelector = "bumper.name_input"
+    static let sensorSelector = "sensor.name_input"
 }
