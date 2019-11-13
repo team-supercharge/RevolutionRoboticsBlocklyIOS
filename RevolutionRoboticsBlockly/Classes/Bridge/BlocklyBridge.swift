@@ -13,6 +13,8 @@ public protocol BlocklyBridgeDelegate: class {
     func alert(message: String, callback: (() -> Void)?)
     func confirm(message: String, callback: ((Bool) -> Void)?)
     func optionSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
+    func motorSelector(_ inputHandler: InputHandler, callback: ((String?) -> Void)?)
+    func sensorSelector(_ inputHandler: InputHandler, isBumper: Bool, callback: ((String?) -> Void)?)
     func driveDirectionSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
     func colorSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
     func audioSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
@@ -123,6 +125,26 @@ extension BlocklyBridge {
             }
 
             delegate?.optionSelector(optionSelector, callback: callback)
+
+        case let type where type.contains(BlockType.motorSelector):
+            guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
+                return
+            }
+
+            delegate?.motorSelector(inputHandler, callback: callback)
+            
+        case let type where type.contains(BlockType.bumperSelector):
+            guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
+                            return
+                        }
+            delegate?.sensorSelector(inputHandler, isBumper: true, callback: callback)
+            
+        case let type where type.contains(BlockType.sensorSelector):
+            guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
+                return
+            }
+            
+            delegate?.sensorSelector(inputHandler, isBumper: false, callback: callback)
 
         case let type where type.contains(BlockType.driveDirectionSelector):
             guard let optionSelector = decodeJSONFromString(OptionSelector.self, string: data) else {
