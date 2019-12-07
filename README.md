@@ -1,6 +1,6 @@
 # Revolution Robotics Blockly Code Editor iOS SDK
 
-[![CI Status](https://img.shields.io/travis/Gabor Nagy Farkas/RevolutionRoboticsBlockly.svg?style=flat)](https://travis-ci.org/Gabor Nagy Farkas/RevolutionRoboticsBlockly)
+[![Build Status](https://app.bitrise.io/app/c175402d8b2545c0/status.svg?token=Nde9HDTtEJCfY5j2LmkapQ)](https://app.bitrise.io/app/c175402d8b2545c0)
 [![Version](https://img.shields.io/cocoapods/v/RevolutionRoboticsBlockly.svg?style=flat)](https://cocoapods.org/pods/RevolutionRoboticsBlockly)
 [![License](https://img.shields.io/cocoapods/l/RevolutionRoboticsBlockly.svg?style=flat)](https://cocoapods.org/pods/RevolutionRoboticsBlockly)
 [![Platform](https://img.shields.io/cocoapods/p/RevolutionRoboticsBlockly.svg?style=flat)](https://cocoapods.org/pods/RevolutionRoboticsBlockly)
