@@ -21,6 +21,7 @@ public protocol BlocklyBridgeDelegate: class {
     func sliderHandler(_ sliderHandler: SliderHandler, callback: ((String?) -> Void)?)
     func singleLEDInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?)
     func multiLEDInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?)
+    func listSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)
     func numberInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?)
     func textInput(_ inputHandler: InputHandler, callback: ((String?) -> Void)?)
     func variableContext(_ optionSelector: OptionSelector, callback: ((VariableContextAction?) -> Void)?)
@@ -153,13 +154,28 @@ extension BlocklyBridge {
 
             delegate?.driveDirectionSelector(optionSelector, callback: callback)
 
+        case let type where type.contains(BlockType.loopCountSelector)
+            || type.contains(BlockType.waitSelector):
+            guard let optionSelector = decodeJSONFromString(OptionSelector.self, string: data) else {
+                return
+            }
+
+            delegate?.listSelector(optionSelector, callback: callback)
+            
         case let type where type.contains(BlockType.selector):
             guard let optionSelector = decodeJSONFromString(OptionSelector.self, string: data) else {
                 return
             }
 
             delegate?.optionSelector(optionSelector, callback: callback)
+            
+        case let type where type.contains(BlockType.allLEDSelector):
+            guard let optionSelector = decodeJSONFromString(OptionSelector.self, string: data) else {
+                return
+            }
 
+            delegate?.colorSelector(optionSelector, callback: callback)
+            
         case let type where type.contains(BlockType.singleLEDSelector):
             guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
                 return
@@ -174,7 +190,8 @@ extension BlocklyBridge {
 
             delegate?.multiLEDInput(inputHandler, callback: callback)
 
-        case let type where type.contains(BlockType.input) || type.contains(BlockType.procedures):
+        case let type where type.contains(BlockType.input)
+            || type.contains(BlockType.procedures):
             guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
                 return
             }
