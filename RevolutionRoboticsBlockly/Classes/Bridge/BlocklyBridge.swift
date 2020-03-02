@@ -127,7 +127,10 @@ extension BlocklyBridge {
 
             delegate?.optionSelector(optionSelector, callback: callback)
 
-        case let type where type.contains(BlockType.motorSelector):
+        case let type where type.contains(BlockType.motorSelector)
+            || type.contains(BlockType.motorSimplifiedSelector)
+            || type.contains(BlockType.motorReadPosition)
+            || type.contains(BlockType.motorResetPosition):
             guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
                 return
             }
@@ -140,7 +143,8 @@ extension BlocklyBridge {
                         }
             delegate?.sensorSelector(inputHandler, isBumper: true, callback: callback)
             
-        case let type where type.contains(BlockType.sensorSelector):
+        case let type where type.contains(BlockType.sensorSelector)
+            || type.contains(BlockType.objectNearSelector):
             guard let inputHandler = decodeJSONFromString(InputHandler.self, string: data) else {
                 return
             }
