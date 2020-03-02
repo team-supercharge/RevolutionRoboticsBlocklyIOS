@@ -22,8 +22,12 @@ enum BlockType {
     static let multiLEDSelector = "block_set_multiple_led.led_ids"
     static let driveDirectionSelector = "block_drive.direction_selector"
     static let motorSelector = "motor.name_input"
+    static let motorSimplifiedSelector = "motor_simplified.name_input"
+    static let motorReadPosition = "block_read_motor_position.name_input"
+    static let motorResetPosition = "block_reset_motor_position.name_input"
     static let bumperSelector = "bumper.name_input"
     static let sensorSelector = "sensor.name_input"
+    static let objectNearSelector = "block_is_object_near.name_input"
     static let loopCountSelector = "controls_repeat_n_times"
     static let waitSelector = "block_wait_simplified"
 }

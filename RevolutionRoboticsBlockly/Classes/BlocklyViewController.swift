@@ -19,7 +19,16 @@ public class BlocklyViewController: UIViewController, NibLoadable {
     // MARK: - Constant
     private enum Constant {
         static let webview: (resource: String, extension: String) = (resource: "webview", extension: "html")
-        static let iOSBlocklyUserAgent = "iOS-Blockly"
+        static var iOSBlocklyUserAgent: String {
+            switch UIDevice.current.userInterfaceIdiom {
+            case .phone:
+                return "iPhone"
+            case .pad:
+                return "iPad"
+            default:
+                return "iPod"
+            }
+        }
     }
 
     // MARK: - Init
