@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RevolutionRoboticsBlockly'
-  s.version          = '0.2.6'
+  s.version          = '0.2.7'
   s.summary          = 'Revolution Robotics Blockly is built on Google’s open-source Blockly library.'
 
 # This description is used to generate tags and improve search results.
