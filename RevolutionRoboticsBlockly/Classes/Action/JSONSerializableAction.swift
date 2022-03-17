@@ -5,6 +5,8 @@
 //  Created by Mate Papp on 2019. 06. 06..
 //
 
+import Foundation
+
 public protocol JSONSerializableAction: Encodable { }
 
 public extension JSONSerializableAction {

@@ -9,7 +9,7 @@ import WebKit
 import WKWebViewJavascriptBridge
 
 // MARK: - BlocklyBridgeDelegate
-public protocol BlocklyBridgeDelegate: class {
+public protocol BlocklyBridgeDelegate: AnyObject {
     func alert(message: String, callback: (() -> Void)?)
     func confirm(message: String, callback: ((Bool) -> Void)?)
     func optionSelector(_ optionSelector: OptionSelector, callback: ((String?) -> Void)?)

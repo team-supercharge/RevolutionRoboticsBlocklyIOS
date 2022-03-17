@@ -6,6 +6,6 @@
 //  Copyright © 2019. Revolution Robotics. All rights reserved.
 //
 
-protocol NibLoadable: class {
+protocol NibLoadable: AnyObject {
     static var nibName: String { get }
 }

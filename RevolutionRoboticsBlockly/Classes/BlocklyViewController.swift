@@ -33,7 +33,7 @@ public class BlocklyViewController: UIViewController, NibLoadable {
 
     // MARK: - Init
     public init() {
-        super.init(nibName: type(of: self).nibName, bundle: Bundle(for: type(of: self)))
+        super.init(nibName: type(of: self).nibName, bundle: .module)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -64,8 +64,7 @@ extension BlocklyViewController {
     }
 
     private func loadWebContent() {
-        let bundle = Bundle(for: type(of: self))
-        guard let url = bundle.url(forResource: Constant.webview.resource, withExtension: Constant.webview.extension) else {
+        guard let url = Bundle.module.url(forResource: Constant.webview.resource, withExtension: Constant.webview.extension) else {
             print("Failed to load HTML. Could not find resource.")
             return
         }
